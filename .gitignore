@@ -1,0 +1,11 @@
+# 参考资料图片（含个人信息，不上传）
+*.jpg
+*.jpeg
+*.png
+
+# 工作区数据
+.workbuddy/
+
+# 系统文件
+.DS_Store
+Thumbs.db
