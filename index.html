@@ -205,6 +205,26 @@
   .promo-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .promo-item{font-size:13px;color:var(--ink2);line-height:1.6;background:rgba(255,255,255,.6);border-radius:10px;padding:11px 14px}
   .promo-item b{display:block;color:#c94a15;font-size:14px;margin-bottom:2px}
+
+  /* ---------- 官方雪票价格表 ---------- */
+  .ticket-sec{margin-top:22px}
+  .ticket-note{font-size:12.5px;color:var(--ink2);background:var(--ice);border-left:4px solid var(--primary);border-radius:10px;padding:11px 16px;margin-bottom:14px;line-height:1.7}
+  .ticket-note b{color:var(--primary2)}
+  .ticket-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ticket-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .ticket-card .th{padding:12px 16px;color:#fff;font-size:14px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .ticket-card.g .th{background:linear-gradient(100deg,#1676c9,#0d5ba7)}
+  .ticket-card.t .th{background:linear-gradient(100deg,#f2662a,#d9531e)}
+  .ticket-card .th small{font-size:11px;font-weight:600;opacity:.85;white-space:nowrap}
+  .ticket-card table{width:100%;border-collapse:collapse;font-size:12.5px}
+  .ticket-card th,.ticket-card td{padding:7px 11px;text-align:left;border-bottom:1px solid var(--line)}
+  .ticket-card thead th{background:var(--bg2);color:var(--ink3);font-size:11px;font-weight:700;white-space:nowrap}
+  .ticket-card tbody tr:last-child td{border-bottom:0}
+  .ticket-card td:first-child{font-weight:700;color:var(--ink)}
+  .ticket-card .pr{font-weight:900;color:#d9531e;white-space:nowrap}
+  .ticket-card .pr .old{font-weight:600;color:var(--ink3);text-decoration:line-through;margin-right:5px}
+  .ticket-card .pr .dash{color:var(--ink3)}
+  .ticket-card .tf{padding:9px 14px;background:var(--bg2);font-size:11px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--line)}
   .rdownside{margin-top:10px;background:rgba(242,102,42,.16);border:1px solid rgba(255,190,150,.35);border-radius:9px;padding:9px 12px;font-size:12.5px;color:#ffe0cc;line-height:1.55}
   .rdownside b{color:#ffc39c}
 
@@ -285,7 +305,7 @@
     .tickets,.resorts,.sh-grid,.budget-grid,.tip-grid{grid-template-columns:1fr}
     .summary{position:static}
     .billing-note .bn-grid{grid-template-columns:1fr}
-    .day-tips,.promo-list{grid-template-columns:1fr}
+    .day-tips,.promo-list,.ticket-grid{grid-template-columns:1fr}
     .day-head .day-sub{display:none}
     .gear-list{grid-template-columns:repeat(2,1fr)}
     .tl::before{left:66px}.tl-dot{left:57px}.tl-item{grid-template-columns:56px 1fr;gap:24px}
@@ -323,6 +343,7 @@
       <a href="#timeline" data-target="timeline">一日安排</a>
       <a href="#two-day" data-target="two-day">两日规划</a>
       <a href="#resort" data-target="resort">雪场推荐</a>
+      <a href="#ticket" data-target="ticket">雪票价格</a>
       <a href="#shuttle" data-target="shuttle">接驳指南</a>
       <a href="#budget" data-target="budget">费用预算</a>
       <a href="#tips" data-target="tips">出行贴士</a>
@@ -571,6 +592,47 @@
         <div class="promo-item"><b>🎓 全日制大学生 · 23 岁以下免费</b>全日制在校大学生且 23 岁以下可免费滑雪，需携带有效学生证件，具体规则以雪场公布为准。</div>
       </div>
     </div>
+
+    <div class="ticket-sec reveal">
+      <div class="sec-head" style="margin-bottom:6px">
+        <div class="kicker">Ticket Prices</div>
+        <h2>官方雪票价格表</h2>
+        <p>以下为两家雪场官方购票页的公开报价（2026–27 雪季），"起"为起售价，实际以下单时为准。<b>我们都租雪具，所以重点看「不含雪具」这一列。</b></p>
+      </div>
+      <div class="ticket-note">⏱ <b>重要更正：</b>官方票务页明确写明，<b>1 日票限当天日场、不可跨夜场及第二天使用</b>；4 小时票须连续 4 小时使用，也不可跨夜场 / 次日。所以此前"一张票滑到次日同一时间"的说法不适用于这两家雪场，请以官方规则为准。</div>
+      <div class="ticket-grid">
+        <div class="ticket-card g">
+          <div class="th">云顶滑雪公园 <small>GENTING · 官方票务页</small></div>
+          <table>
+            <thead><tr><th>票种</th><th>不含雪具</th><th>含雪具</th></tr></thead>
+            <tbody>
+              <tr><td>4 小时滑雪票</td><td class="pr">¥208 起</td><td class="pr">¥328 起</td></tr>
+              <tr><td>1 日滑雪票</td><td class="pr">¥288 起</td><td class="pr">¥418 起</td></tr>
+              <tr><td>1.5 天滑雪票</td><td class="pr">¥398 起</td><td class="pr">¥578 起</td></tr>
+              <tr><td>2 日滑雪票</td><td class="pr">¥428 起</td><td class="pr">¥648 起</td></tr>
+              <tr><td>3 日滑雪票</td><td class="pr">¥608 起</td><td class="pr">¥938 起</td></tr>
+              <tr><td>下午场+夜场票</td><td class="pr">¥158 起</td><td class="pr">¥258 起</td></tr>
+              <tr><td>云龙通（云顶+万龙）</td><td class="pr">¥620 起</td><td class="pr dash">—</td></tr>
+              <tr><td>雪具寄存服务（整季）</td><td class="pr">¥480 起</td><td class="pr dash">—</td></tr>
+            </tbody>
+          </table>
+          <div class="tf">* 4 小时票需连续使用、不可跨夜场及次日；1 日票当天日场有效；1.5/2/3 日票限日场缆车运营使用、夜场不可用、不可跨天。下午场 13:00 入场至 16:30，夜场 18:30–21:30，须同一天使用、不可拆分。云龙通需在云顶核销。雪具寄存为 26–27 雪季整季寄存一套（雪板/雪鞋/雪杖）。</div>
+        </div>
+        <div class="ticket-card t">
+          <div class="th">太舞滑雪小镇 <small>THAIWOO · 周末价</small></div>
+          <table>
+            <thead><tr><th>票种</th><th>周末现价</th><th>原价</th></tr></thead>
+            <tbody>
+              <tr><td>周末 4 小时滑雪票</td><td class="pr">¥268</td><td class="pr"><span class="old">¥413</span></td></tr>
+              <tr><td>周末 1 天滑雪票</td><td class="pr">¥388</td><td class="pr"><span class="old">¥590</span></td></tr>
+              <tr><td>周末 2 天滑雪票</td><td class="pr">¥578</td><td class="pr"><span class="old">¥885</span></td></tr>
+            </tbody>
+          </table>
+          <div class="tf">* 截图为周末档期（12/12–12/15）价格，约 4.6–6.5 折；随买随用、未核销可退。平日档期通常更便宜，具体以购票页当日显示为准。</div>
+        </div>
+      </div>
+      <div class="ticket-note" style="border-left-color:var(--accent);background:var(--accent-soft);margin-top:14px;margin-bottom:0">💡 <b>结合我们的行程怎么选：</b>一日游 13:45 开滑、17:00 收工，约 3–4 小时，买单日票不划算——云顶买 <b>4 小时票 ¥208（不含雪具）</b>或太舞周末 4 小时票 ¥268 最合适；两日游住太舞套餐已含雪票，不用再单买（想自行买票的话，云顶 2 日 ¥428 / 太舞周末 2 天 ¥578 可作参考）。</div>
+    </div>
   </div>
 </section>
 
@@ -623,17 +685,18 @@
     <div class="budget-grid">
       <div class="panel reveal" id="costBox">
         <label class="cost-row"><input type="checkbox" data-cost="186" checked><span><span class="cname">往返高铁 · 二等座</span><span class="cdesc">去程 ¥93 + 回程 ¥93，固定支出</span></span><span class="cprice num">¥186</span></label>
-        <label class="cost-row"><input type="checkbox" data-cost="280" checked><span><span class="cname">雪票 · 按小时计算</span><span class="cdesc">可按小时买；买一日票则从启用起 24 小时内有效</span></span><span class="cprice num">¥280</span></label>
+        <label class="cost-row"><input type="checkbox" data-cost="208" checked><span><span class="cname">雪票 · 4 小时票（官方价）</span><span class="cdesc">云顶 4 小时票 ¥208 起，不含雪具；官方规则不可跨夜场及次日</span></span><span class="cprice num">¥208</span></label>
         <label class="cost-row"><input type="checkbox" data-cost="100" checked><span><span class="cname">雪具租赁 · 按天计算</span><span class="cdesc">雪板 + 雪鞋 + 雪杖 + 头盔；半天算一天，¥100–150/套，此处按下限估算</span></span><span class="cprice num">¥100–150</span></label>
         <label class="cost-row"><input type="checkbox" data-cost="60" checked><span><span class="cname">餐饮补给</span><span class="cdesc">午餐、热饮与能量补给，参考价</span></span><span class="cprice num">¥60</span></label>
         <label class="cost-row free"><input type="checkbox" data-cost="0" checked disabled><span><span class="cname">雪场接驳巴士</span><span class="cdesc">高铁站 ⇄ 雪场，免费</span></span><span class="cprice num">¥0</span></label>
       </div>
       <div class="summary reveal">
         <div class="lbl">预计人均花费</div>
-        <div class="total num" id="totalCost">¥626</div>
-        <div class="unit">人民币 / 人 · 综合约 ¥600</div>
+        <div class="total num" id="totalCost">¥554</div>
+        <div class="unit">人民币 / 人 · 综合约 ¥550–600</div>
         <div class="included">
           ✓ 往返高铁二等座已含 ¥186<br>
+          ✓ 雪票按云顶官方 4 小时票 ¥208 计（不含雪具）<br>
           ✓ 雪具现场租借（按 ¥100–150 浮动），无需高铁「雪具便利行」68 元<br>
           ✓ 雪场接驳巴士免费<br>
           ✓ 价格随雪场、时段浮动，仅供参考
@@ -641,10 +704,10 @@
       </div>
     </div>
     <div class="billing-note reveal">
-      <h4>⏱ 计费规则要注意：雪票按小时，雪具按天</h4>
+      <h4>⏱ 计费规则要注意：雪票按时段，雪具按天</h4>
       <div class="bn-grid">
-        <div class="bn-item"><span class="bn-ic">🎫</span><b>雪票按小时计算：</b>可以按实际时长购买；如果买「一日票」，从启用那一刻起算，可一直滑到<b>第二天同一时间</b>（例如 12:00 启用可滑到次日 12:00），并非按自然日截止。</div>
-        <div class="bn-item"><span class="bn-ic">🎿</span><b>雪具按天计算：</b>租赁以「天」为单位，<b>半天也算一天</b>。我们这次下午到、傍晚还，虽然只滑几小时，仍按一整天收费（参考价 ¥100–150 / 套）。</div>
+        <div class="bn-item"><span class="bn-ic">🎫</span><b>雪票按时段购买（以官方规则为准）：</b>云顶有 4 小时 / 1 日 / 多日票等，<b>4 小时票须连续使用、1 日票限当天日场，均不可跨夜场及次日</b>。我们只滑一下午，买 4 小时票最划算；太舞周末 4 小时票 ¥268、1 天票 ¥388（原价 ¥590）。</div>
+        <div class="bn-item"><span class="bn-ic">🎿</span><b>雪具按天计算：</b>租赁以「天」为单位，<b>半天也算一天</b>。我们这次下午到、傍晚还，虽然只滑几小时，仍按一整天收费（参考价 ¥100–150 / 套）。注意雪票「含雪具」款通常比单买贵，我们都租雪具，买「不含雪具」票更省。</div>
       </div>
     </div>
     <p class="disclaimer">※ 数据来源：12306 / 同程 / 去哪儿列车信息，张家口市政府及媒体 2025–2026 雪季公开报道。票价、车次、接驳与雪票政策可能调整，请以官方实时发布为准。</p>
@@ -661,7 +724,7 @@
     </div>
     <div class="tip-grid">
       <div class="tip reveal"><div class="ic">🚉</div><h3>车站服务找得到人</h3><p>清河站有「亲和怡行」服务组，太子城站有「雪之梦-如意」服务组，服务台配备厚手套、棉帽、暖贴等应急物品，天冷路滑随时求助。</p></div>
-      <div class="tip reveal"><div class="ic">🎫</div><h3>雪票按小时、雪具按天</h3><p>雪票按小时计费，只滑一下午可按需买短时段；买一日票则从启用起 24 小时有效。雪具租赁按天算、半天也算一天，所以下午到场租一套仍是整天价。车票提前订，雪具到雪场租即可。</p></div>
+      <div class="tip reveal"><div class="ic">🎫</div><h3>雪票按时段、雪具按天</h3><p>只滑一下午就买 4 小时票，别买一日票；官方明确 1 日票限当天日场、不可跨夜场及次日。雪具租赁按天算、半天也算一天，下午到场租一套仍是整天价。车票提前订，雪具到雪场租即可。</p></div>
       <div class="tip warn reveal"><div class="ic">⚠️</div><h3>租雪具先试穿再上道</h3><p>凭身份证办租赁、交押金；雪鞋要合脚、固定器让工作人员调好，不合身立刻换。归还时清点装备、留好押金凭证，别赶在发车前才还。</p></div>
       <div class="tip reveal"><div class="ic">🧥</div><h3>自备贴身装备更舒服</h3><p>雪板雪鞋雪杖头盔现场租，但手套、雪镜、防水外套、防晒和干爽袜建议自备（更卫生合身）。采用「排汗内层 + 保暖中层 + 防水外层」三层穿法。</p></div>
     </div>
