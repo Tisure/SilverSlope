@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>崇礼滑雪一日攻略 · 北京 → 太子城</title>
+<meta name="description" content="北京清河站出发，高铁直达太子城，崇礼滑雪当日往返攻略：车次、接驳、雪场推荐、费用预算与装备清单。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%E2%9D%84%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#eef5fb; --bg2:#f7fbfe; --surface:#ffffff;
+    --ink:#102a43; --ink2:#486581; --ink3:#829ab1;
+    --primary:#1676c9; --primary2:#0d5ba7;
+    --ice:#dceefb; --ice2:#bfe0f6;
+    --accent:#f2662a; --accent-soft:#fff1e9;
+    --line:#e2ecf5; --shadow:0 12px 34px rgba(16,42,67,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg2); color:var(--ink); line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+
+  /* ---------- 顶部导航 ---------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(255,255,255,.86);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;gap:26px;height:64px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:17px;white-space:nowrap}
+  .brand .mark{
+    width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--primary),var(--primary2));color:#fff;font-size:18px;
+    box-shadow:0 6px 14px rgba(22,118,201,.32);
+  }
+  .brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--ink3);font-weight:700;line-height:1}
+  .nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{
+    font-size:13.5px;color:var(--ink2);padding:8px 12px;border-radius:9px;white-space:nowrap;
+    font-weight:600;transition:.2s;
+  }
+  .nav a:hover{background:var(--ice);color:var(--primary2)}
+  .nav a.active{background:var(--primary);color:#fff}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(165deg,#082642 0%,#0e4b7a 46%,#1b79bd 100%);
+    padding:150px 0 108px;min-height:640px;
+  }
+  .hero .wrap{position:relative;z-index:3}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;
+    letter-spacing:1px;padding:7px 14px;border-radius:99px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#7ee0b8;box-shadow:0 0 0 4px rgba(126,224,184,.22)}
+  .hero h1{
+    font-size:clamp(38px,6.4vw,72px);line-height:1.1;font-weight:900;letter-spacing:-1px;
+    margin:22px 0 18px;max-width:760px;
+  }
+  .hero h1 .hl{background:linear-gradient(90deg,#ffd6a5,#ff9a5c);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(15px,2vw,19px);max-width:600px;color:#d8ecfb;line-height:1.8}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .badges span{
+    font-size:13px;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(4px);
+  }
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:12px;
+    font-weight:700;font-size:14.5px;transition:.2s;cursor:pointer;border:0;
+  }
+  .btn-main{background:linear-gradient(135deg,#ff9a5c,#f2662a);color:#fff;box-shadow:0 10px 24px rgba(242,102,42,.35)}
+  .btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(242,102,42,.45)}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+  .btn-ghost:hover{background:rgba(255,255,255,.2)}
+  .btn-two{background:linear-gradient(135deg,#3fd0c9,#17a89e);color:#fff;box-shadow:0 10px 24px rgba(23,168,158,.32)}
+  .btn-two:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(23,168,158,.45)}
+  .snow{position:absolute;top:-12px;border-radius:50%;background:#fff;opacity:.75;pointer-events:none;
+    animation:fall var(--dur) linear var(--delay) infinite}
+  @keyframes fall{from{transform:translate(0,-12px)}to{transform:translate(var(--drift),108vh)}}
+  .mountains{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:300px;z-index:1}
+
+  /* ---------- 板块通用 ---------- */
+  section{padding:76px 0}
+  .sec-head{margin-bottom:30px}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:2.5px;color:var(--primary);text-transform:uppercase}
+  .sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:900;letter-spacing:-.5px;margin:8px 0 6px}
+  .sec-head p{color:var(--ink2);font-size:15px;max-width:640px}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- 概览 ---------- */
+  .overview{background:var(--bg2);padding-top:56px}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .fact{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .fact::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+  .fact:nth-child(3)::before{background:var(--accent)}
+  .fact:nth-child(4)::before{background:#2fae86}
+  .fact .lbl{font-size:12.5px;color:var(--ink3);font-weight:700;letter-spacing:.5px}
+  .fact .val{font-size:25px;font-weight:900;margin-top:6px;letter-spacing:-.5px}
+  .fact .sub{font-size:12.5px;color:var(--ink2);margin-top:2px}
+
+  /* ---------- 交通车票 ---------- */
+  .tickets{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .ticket{
+    position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:26px 26px 22px;overflow:hidden;
+  }
+  .ticket::before,.ticket::after{
+    content:'';position:absolute;width:22px;height:22px;border-radius:50%;background:var(--bg2);
+    border:1px solid var(--line);top:118px;
+  }
+  .ticket::before{left:-12px}.ticket::after{right:-12px}
+  .ticket .thead{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px dashed var(--line)}
+  .tag{font-size:12px;font-weight:800;padding:5px 11px;border-radius:8px}
+  .tag.go{background:#e7f3fd;color:var(--primary2)}
+  .tag.back{background:var(--accent-soft);color:#d9531e}
+  .train-no{font-size:12.5px;color:var(--ink3);font-weight:700}
+  .route{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 0 16px}
+  .station .code{font-size:clamp(27px,3.6vw,38px);font-weight:900;letter-spacing:-1px;line-height:1}
+  .station .name{font-size:14px;color:var(--ink2);margin-top:6px;font-weight:600}
+  .station .name b{color:var(--ink);font-weight:800}
+  .mid{flex:1;text-align:center;color:var(--ink3);font-size:12px;position:relative}
+  .mid .line{height:2px;background:linear-gradient(90deg,var(--ice2),var(--primary),var(--ice2));border-radius:2px;margin:6px 4px;position:relative}
+  .mid .line::after{content:'🚄';position:absolute;right:-4px;top:-13px;font-size:16px}
+  .tfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--line);padding-top:16px;font-size:13px;color:var(--ink2)}
+  .tfoot b{color:var(--ink)}
+  .price{font-size:22px;font-weight:900;color:var(--accent)}
+  .stops{font-size:12px;color:var(--ink3);margin-top:14px;line-height:1.6}
+
+  /* ---------- 时间轴 ---------- */
+  .timeline{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+  .tl{position:relative;max-width:820px;margin:0 auto;padding-left:14px}
+  .tl::before{content:'';position:absolute;left:88px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--primary),var(--ice2),var(--accent))}
+  .tl-item{display:grid;grid-template-columns:74px 1fr;gap:32px;position:relative;padding-bottom:26px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-time{text-align:right;font-size:16px;font-weight:900;color:var(--primary2);padding-top:16px;position:relative}
+  .tl-time small{display:block;font-size:11px;color:var(--ink3);font-weight:600}
+  .tl-dot{position:absolute;left:79px;top:20px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--primary);z-index:2}
+  .tl-item.hi .tl-dot{border-color:var(--accent);box-shadow:0 0 0 5px var(--accent-soft)}
+  .tl-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;box-shadow:0 6px 18px rgba(16,42,67,.05);
+  }
+  .tl-card h3{font-size:16px;font-weight:800;margin-bottom:3px}
+  .tl-card p{font-size:13.5px;color:var(--ink2)}
+  .tl-card .mini{display:inline-block;margin-top:8px;font-size:12px;color:var(--primary2);background:var(--ice);padding:3px 10px;border-radius:7px;font-weight:700}
+
+  /* ---------- 两日规划 ---------- */
+  .twoday{background:var(--bg2)}
+  .day-head{display:flex;align-items:center;gap:12px;margin:34px 0 20px}
+  .day-head .day-badge{font-size:15px;font-weight:900;color:#fff;padding:7px 16px;border-radius:10px;letter-spacing:.5px;white-space:nowrap}
+  .day-head .day-badge.d1{background:linear-gradient(135deg,#1676c9,#0d5ba7)}
+  .day-head .day-badge.d2{background:linear-gradient(135deg,#ff9a5c,#f2662a)}
+  .day-head h3{font-size:19px;font-weight:800}
+  .day-head .day-sub{font-size:13px;color:var(--ink3);margin-left:auto}
+  .day-tips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:8px}
+  .day-tip{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+  .day-tip .ic{font-size:20px}
+  .day-tip b{display:block;font-size:14px;margin:6px 0 3px}
+  .day-tip p{font-size:12.5px;color:var(--ink2);line-height:1.6}
+  .twoday .tl::before{left:88px}
+
+  /* ---------- 雪场 ---------- */
+  .resorts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .resort{
+    position:relative;border-radius:var(--radius);overflow:hidden;color:#fff;min-height:290px;
+    padding:28px;display:flex;flex-direction:column;justify-content:flex-end;
+    box-shadow:var(--shadow);isolation:isolate;
+  }
+  .resort::before{content:'';position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center}
+  .resort::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,26,45,.05) 0%,rgba(4,26,45,.5) 55%,rgba(4,26,45,.9) 100%)}
+  .resort.a::before{background-image:linear-gradient(140deg,#2e6fa8,#6cb6e0)}
+  .resort.b::before{background-image:linear-gradient(140deg,#355f7e,#8fc4c9)}
+  .resort .rtag{position:absolute;top:22px;left:26px;font-size:12px;font-weight:800;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);padding:5px 11px;border-radius:8px;backdrop-filter:blur(4px)}
+  .resort h3{font-size:27px;font-weight:900;letter-spacing:-.5px}
+  .resort .en{font-size:11px;letter-spacing:2px;opacity:.8;font-weight:700;margin-top:30px}
+  .resort p{font-size:13.5px;color:#e8f3fb;margin-top:9px;max-width:440px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .chips span{font-size:11.5px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);padding:4px 10px;border-radius:99px}
+  .rtrans{display:flex;align-items:center;gap:8px;margin-top:14px;padding:10px 13px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);border-radius:10px;font-size:12.5px;font-weight:600;line-height:1.5}
+  .rtrans b{color:#ffd9ad;font-weight:800}
+  .rdist{font-size:12px;color:#ffd9ad;font-weight:700;margin-top:7px}
+  .resort-note{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow)}
+  .resort-note h4{font-size:14px;font-weight:800;margin-bottom:8px}
+  .resort-note .rn-row{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:13px;color:var(--ink2)}
+  .resort-note .rn-row b{color:var(--ink)}
+  .resort-note .rn-tag{display:inline-block;background:var(--accent-soft);color:#d9531e;font-size:11px;font-weight:800;padding:1px 8px;border-radius:6px;margin-left:4px}
+  .promo-card{margin-top:14px;background:linear-gradient(135deg,#fff6ec,#ffe9d6);border:1px solid #ffd6b0;border-left:4px solid var(--accent);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow)}
+  .promo-card h4{font-size:14px;font-weight:800;color:#c94a15;margin-bottom:10px}
+  .promo-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .promo-item{font-size:13px;color:var(--ink2);line-height:1.6;background:rgba(255,255,255,.6);border-radius:10px;padding:11px 14px}
+  .promo-item b{display:block;color:#c94a15;font-size:14px;margin-bottom:2px}
+  .rdownside{margin-top:10px;background:rgba(242,102,42,.16);border:1px solid rgba(255,190,150,.35);border-radius:9px;padding:9px 12px;font-size:12.5px;color:#ffe0cc;line-height:1.55}
+  .rdownside b{color:#ffc39c}
+
+  /* ---------- 接驳 ---------- */
+  .shuttle{background:var(--bg)}
+  .sh-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .panel h3{font-size:18px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+  .panel h3 .ic{width:30px;height:30px;border-radius:9px;background:var(--ice);display:grid;place-items:center;font-size:15px}
+  .sh-list{list-style:none;display:grid;gap:12px}
+  .sh-list li{display:flex;gap:12px;font-size:14px;color:var(--ink2);align-items:flex-start}
+  .sh-list li b{color:var(--ink);font-weight:800}
+  .sh-list .tick{color:#2fae86;font-weight:900;flex:none}
+  .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .flow .node{background:var(--ice);color:var(--primary2);font-weight:800;font-size:13px;padding:10px 14px;border-radius:10px}
+  .flow .node.hot{background:var(--accent);color:#fff}
+  .flow .arrow{color:var(--ink3);font-size:18px}
+  .note{margin-top:16px;font-size:12.5px;color:var(--ink3);background:var(--bg2);border-radius:10px;padding:12px 14px;border-left:3px solid var(--primary)}
+
+  /* ---------- 费用 ---------- */
+  .budget-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:start}
+  .cost-row{
+    display:flex;align-items:center;gap:13px;padding:13px 4px;border-bottom:1px solid var(--line);cursor:pointer;
+  }
+  .cost-row:last-child{border-bottom:0}
+  .cost-row input{width:19px;height:19px;accent-color:var(--primary);cursor:pointer;flex:none}
+  .cost-row .cname{font-size:14.5px;font-weight:700}
+  .cost-row .cdesc{font-size:12px;color:var(--ink3);margin-top:1px}
+  .cost-row .cprice{margin-left:auto;font-weight:900;font-size:16px;white-space:nowrap}
+  .cost-row.free .cprice{color:#2fae86}
+  .summary{
+    position:sticky;top:88px;background:linear-gradient(160deg,#0e4b7a,#1676c9);color:#fff;
+    border-radius:var(--radius);padding:28px;box-shadow:0 16px 36px rgba(14,75,122,.28);
+  }
+  .summary .lbl{font-size:13px;opacity:.85;letter-spacing:1px}
+  .summary .total{font-size:clamp(40px,5vw,58px);font-weight:900;letter-spacing:-2px;line-height:1.15;margin:6px 0}
+  .summary .unit{font-size:14px;opacity:.85}
+  .summary .included{margin-top:18px;border-top:1px solid rgba(255,255,255,.25);padding-top:16px;font-size:12.5px;opacity:.9;line-height:1.9}
+  .disclaimer{font-size:12px;color:var(--ink3);margin-top:16px}
+  .billing-note{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow)}
+  .billing-note h4{font-size:14px;font-weight:800;margin-bottom:10px}
+  .billing-note .bn-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .billing-note .bn-item{font-size:13px;color:var(--ink2);line-height:1.75}
+  .billing-note .bn-item b{color:var(--ink)}
+  .billing-note .bn-item .bn-ic{font-size:17px;margin-right:4px}
+
+  /* ---------- 贴士 ---------- */
+  .tips{background:var(--bg)}
+  .tip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .tip{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .tip .ic{font-size:22px}
+  .tip h3{font-size:16px;font-weight:800;margin:8px 0 6px}
+  .tip p{font-size:13.5px;color:var(--ink2)}
+  .tip.warn{border-left:4px solid var(--accent)}
+  .gear{margin-top:22px}
+  .gear h3{font-size:18px;font-weight:800;margin-bottom:4px}
+  .gear .hrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .gear .progress{font-size:12.5px;color:var(--primary2);font-weight:800;background:var(--ice);padding:4px 12px;border-radius:99px}
+  .gear-list{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .gear-list label{
+    display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);
+    border-radius:11px;padding:12px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.2s;
+  }
+  .gear-list label:hover{border-color:var(--primary)}
+  .gear-list input{width:17px;height:17px;accent-color:var(--primary);cursor:pointer;flex:none}
+  .gear-list label.done{background:#f0faf5;border-color:#bfe6d3;color:#2f8f6c;text-decoration:line-through}
+  .gear-list label.must{border-color:#ffd6b0;background:#fffaf5}
+  .gear-list label.must span em{font-style:normal;font-size:10px;color:#d9531e;background:var(--accent-soft);padding:1px 6px;border-radius:5px;margin-left:5px;font-weight:800;white-space:nowrap}
+
+  /* ---------- 页脚 ---------- */
+  footer{background:#0a2138;color:#a9c3da;padding:38px 0;font-size:12.5px}
+  footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  footer b{color:#fff;font-size:15px}
+  footer .src{max-width:720px;line-height:1.9}
+
+  @media(max-width:900px){
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .tickets,.resorts,.sh-grid,.budget-grid,.tip-grid{grid-template-columns:1fr}
+    .summary{position:static}
+    .billing-note .bn-grid{grid-template-columns:1fr}
+    .day-tips,.promo-list{grid-template-columns:1fr}
+    .day-head .day-sub{display:none}
+    .gear-list{grid-template-columns:repeat(2,1fr)}
+    .tl::before{left:66px}.tl-dot{left:57px}.tl-item{grid-template-columns:56px 1fr;gap:24px}
+  }
+  @media(max-width:560px){
+    section{padding:56px 0}
+    .hero{padding:124px 0 84px;min-height:560px}
+    .facts{grid-template-columns:1fr 1fr;gap:10px}
+    .fact{padding:16px}.fact .val{font-size:20px}
+    .ticket::before,.ticket::after{display:none}
+    .station .code{font-size:26px}
+    .gear-list{grid-template-columns:1fr}
+    .nav{display:none}
+  }
+  @media print{
+    .topbar,.cta,.snow{display:none!important}
+    section{padding:26px 0;break-inside:avoid}
+    .reveal{opacity:1;transform:none}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark">❄</span>
+      <span>雪途<small>SKI TRIP</small></span>
+    </div>
+    <nav class="nav">
+      <a href="#overview" data-target="overview">行程概览</a>
+      <a href="#train" data-target="train">往返高铁</a>
+      <a href="#timeline" data-target="timeline">一日安排</a>
+      <a href="#two-day" data-target="two-day">两日规划</a>
+      <a href="#resort" data-target="resort">雪场推荐</a>
+      <a href="#shuttle" data-target="shuttle">接驳指南</a>
+      <a href="#budget" data-target="budget">费用预算</a>
+      <a href="#tips" data-target="tips">出行贴士</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span> 2025–2026 雪季 · 一日 / 两日可选</span>
+    <h1>北京直达崇礼<br><span class="hl">高铁滑雪攻略</span></h1>
+    <p class="lead">清河站出发，一趟高铁直达太子城。想当天往返就选一日速通，想滑得尽兴就住一晚玩两日，两种方案任你挑。</p>
+    <div class="badges">
+      <span>📍 河北 · 张家口崇礼</span>
+      <span>🚄 京张高铁 · 二等座 ¥93</span>
+      <span>⏱ 山上约 5 小时</span>
+    </div>
+    <div class="cta">
+      <a class="btn btn-main" href="#timeline">查看一日安排 ↓</a>
+      <a class="btn btn-two" href="#two-day">查看两日安排 ↓</a>
+      <a class="btn btn-ghost" href="#budget">费用预算</a>
+      <button class="btn btn-ghost" onclick="window.print()">🖨 打印 / 存为 PDF</button>
+    </div>
+  </div>
+  <svg class="mountains" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="0,220 180,110 320,205 520,80 700,215 900,100 1120,225 1320,120 1440,195 1440,300 0,300" fill="#ffffff" opacity="0.10"/>
+    <polygon points="0,265 220,160 400,250 640,140 860,255 1080,160 1300,265 1440,205 1440,300 0,300" fill="#ffffff" opacity="0.16"/>
+    <polygon points="520,80 600,140 560,135 520,160 480,135 440,140" fill="#ffffff" opacity="0.45"/>
+    <polygon points="900,100 975,155 935,150 900,175 865,150 825,155" fill="#ffffff" opacity="0.4"/>
+    <polygon points="0,300 260,215 480,300 760,200 1020,300 1260,220 1440,285 1440,300" fill="#ffffff" opacity="0.22"/>
+  </svg>
+</section>
+
+<!-- 概览 -->
+<section id="overview" class="overview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Trip Overview</div>
+      <h2>一眼看懂这趟行程</h2>
+      <p>时间、花费、地点一屏掌握。所有信息基于 2025–2026 雪季公开资料整理，请以 12306 与雪场官方发布为准。</p>
+    </div>
+    <div class="facts">
+      <div class="fact reveal"><div class="lbl">出发</div><div class="val">清河站 11:46</div><div class="sub">G7833 · 北京海淀区</div></div>
+      <div class="fact reveal"><div class="lbl">到达</div><div class="val">太子城 12:53</div><div class="sub">出站即接驳 · 约 5–10 分钟到雪场</div></div>
+      <div class="fact reveal"><div class="lbl">往返高铁</div><div class="val num">¥186</div><div class="sub">二等座 ¥93 × 2 程</div></div>
+      <div class="fact reveal"><div class="lbl">有效滑行</div><div class="val">约 4 小时</div><div class="sub">13:45 – 17:00 午后黄金时段</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 交通 -->
+<section id="train">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">By High-speed Rail</div>
+      <h2>往返车票 · 高铁二等座</h2>
+      <p>京张高铁是北京去崇礼最省心的方式，最快约 1 小时抵达。我们都不带雪具、轻装出行，到雪场再租全套，省去搬运麻烦。</p>
+    </div>
+    <div class="tickets">
+      <div class="ticket reveal">
+        <div class="thead">
+          <span class="tag go">去程 · GO</span>
+          <span class="train-no">G7833 · 高速动车</span>
+        </div>
+        <div class="route">
+          <div class="station">
+            <div class="code num">11:46</div>
+            <div class="name"><b>清河站</b><br>北京 · 海淀区</div>
+          </div>
+          <div class="mid">
+            历时 1小时07分
+            <div class="line"></div>
+            直达 · 无需换乘
+          </div>
+          <div class="station" style="text-align:right">
+            <div class="code num">12:53</div>
+            <div class="name"><b>太子城站</b><br>崇礼 · 冬奥核心区</div>
+          </div>
+        </div>
+        <div class="tfoot">
+          <span>席别 <b>二等座</b> · 全程 177 公里</span>
+          <span class="price num">¥93</span>
+        </div>
+        <div class="stops">途经：清河 → 东花园北 → 下花园北 → 太子城（北京北站 11:27 始发，可在清河上车）</div>
+      </div>
+
+      <div class="ticket reveal">
+        <div class="thead">
+          <span class="tag back">回程 · BACK</span>
+          <span class="train-no">车次以 12306 为准</span>
+        </div>
+        <div class="route">
+          <div class="station">
+            <div class="code num">19:06</div>
+            <div class="name"><b>太子城站</b><br>崇礼 · 冬奥核心区</div>
+          </div>
+          <div class="mid">
+            历时约 58分
+            <div class="line"></div>
+            直达 · 无需换乘
+          </div>
+          <div class="station" style="text-align:right">
+            <div class="code num">20:04</div>
+            <div class="name"><b>清河站</b><br>北京 · 海淀区</div>
+          </div>
+        </div>
+        <div class="tfoot">
+          <span>席别 <b>二等座</b> · 傍晚返程</span>
+          <span class="price num">¥93</span>
+        </div>
+        <div class="stops">留足还雪具、接驳回站与安检时间，建议 18:40 前抵达太子城站。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 时间轴 -->
+<section id="timeline" class="timeline">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Day Plan</div>
+      <h2>一日时间轴</h2>
+      <p>从出门到回家，每个环节都留了缓冲。核心原则：中午前上路，下午集中滑，天黑前返程。</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal"><div class="tl-time num">11:00<small>出发前</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>抵达清河站 · 候车</h3><p>提前 45 分钟到站。大家都不带雪具，轻装上阵，只背随身包即可；带好身份证与购票证件。</p><span class="mini">无需预约雪具便利行 · 雪具到雪场租</span></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">11:46<small>发车</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>G7833 发车 → 太子城</h3><p>全程约 1 小时 07 分，沿途经东花园北、下花园北。车上补个觉、换好保暖内搭。</p></div></div>
+      <div class="tl-item hi reveal"><div class="tl-time num">12:53<small>抵达</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>抵达太子城站 · 出站接驳</h3><p>出站口找「雪场接驳巴士」指示牌，免费接驳至云顶 / 太舞，车程约 5–10 分钟，人满即走。</p><span class="mini">接驳免费 · 太子城站靠近云顶与太舞</span></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">13:15<small>准备</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>到雪场 · 租雪具 / 换装</h3><p>到雪具大厅凭身份证办理租赁（押金按雪场规则），领雪板、雪鞋、雪杖、头盔，现场试穿调好固定器。我们都没带雪具，全套现场租，约 20–30 分钟。</p><span class="mini">记得带身份证 · 装备清单见文末</span></div></div>
+      <div class="tl-item hi reveal"><div class="tl-time num">13:45<small>重头戏</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>开滑！午后黄金 4 小时</h3><p>先热身后上初级道找感觉，再逐步进阶。注意 15:30 左右补能量、防晒、换干爽内搭。</p><span class="mini">新手：太舞初级道友好 · 进阶：云顶中级道宽阔</span></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">17:00<small>收工</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>收板 · 归还雪具</h3><p>预留 30–40 分钟归还租赁装备、办理押金退还。可在雪场小镇简单吃点东西、拍两张雪景。</p></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">18:20<small>返站</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>接驳返回太子城站</h3><p>乘雪场接驳巴士回高铁站，预留安检与候车时间。冬季天黑早、路面滑，别卡点。</p></div></div>
+      <div class="tl-item hi reveal"><div class="tl-time num">19:06<small>返程</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>高铁返程 → 清河站</h3><p>约 58 分钟后抵达清河，一天充实圆满。提前叫好车或规划地铁回家路线。</p><span class="mini">20:04 抵达清河站</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 两日规划 -->
+<section id="two-day" class="twoday">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">2-Day Plan</div>
+      <h2>两日规划 · 深度滑雪</h2>
+      <p>不赶时间的选择：在崇礼住一晚，滑两天雪。去程仍是 G7833（清河 11:46 → 太子城 12:53），第二日下午返程，节奏更从容。</p>
+    </div>
+
+    <div class="day-tips">
+      <div class="day-tip reveal"><div class="ic">🏨</div><b>住太舞小镇双人间</b><p>太舞小镇双人间酒店套餐 <b>¥800–1000 / 间 / 晚</b>，含雪票 + 早餐 + 温泉 / 电影票二选一，离雪场近、省心划算；雪季周末紧张，务必提前订。</p></div>
+      <div class="day-tip reveal"><div class="ic">🎫</div><b>雪票不用单买</b><p>酒店套餐已含雪票，两日滑雪不用再单独买票；只有雪具需按天另租（半天也算一天），两天租金 ×2。</p></div>
+      <div class="day-tip reveal"><div class="ic">🚄</div><b>返程车次</b><p>第二天返程与第一天相同：<b>太子城 19:06 → 清河 20:04</b>，高铁二等座 ¥93。下午可以放心多滑一会儿，从容返京。</p></div>
+    </div>
+
+    <div class="day-head reveal"><span class="day-badge d1">DAY 1</span><h3>抵达 · 开滑 · 入住</h3><span class="day-sub">主题：下午黄金时段 + 小镇夜生活</span></div>
+    <div class="tl">
+      <div class="tl-item reveal"><div class="tl-time num">11:00<small>Day1</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>清河站候车</h3><p>提前到站，轻装出行。身份证、证件、换洗衣物随身带好，雪具到雪场租。</p></div></div>
+      <div class="tl-item hi reveal"><div class="tl-time num">11:46<small>发车</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>G7833 发车 → 太子城</h3><p>约 1 小时 07 分抵达，出站乘免费接驳巴士到云顶 / 太舞，约 5–10 分钟。</p><span class="mini">二等座 ¥93（已含在往返 ¥186 中）</span></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">13:15<small>准备</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>先办入住 / 寄存行李</h3><p>到雪场配套酒店先寄存行李、办入住，再轻装去雪具大厅租装备（凭身份证、交押金、试穿调固定器）。</p></div></div>
+      <div class="tl-item hi reveal"><div class="tl-time num">13:45<small>开滑</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>下午滑雪 3–4 小时</h3><p>午后雪质好、光线足。新手先滑初级道，进阶可上云顶中级道或太舞新开的冬奥高级道。</p><span class="mini">雪票由住宿套餐包含，无需另买</span></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">17:30<small>收工</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>还雪具 / 小镇晚餐</h3><p>归还雪具、清点押金凭证；回酒店洗漱休整，凭套餐可享温泉或电影票二选一，在欧式小镇吃顿热乎的，早睡蓄力。</p></div></div>
+    </div>
+
+    <div class="day-head reveal"><span class="day-badge d2">DAY 2</span><h3>晨滑 · 傍晚返程</h3><span class="day-sub">主题：上午人少雪好，傍晚从容返京</span></div>
+    <div class="tl">
+      <div class="tl-item reveal"><div class="tl-time num">08:00<small>Day2</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>酒店早餐 · 再租雪具</h3><p>套餐含早餐，吃饱再去雪具大厅续租（雪具按天算，第二天再付一天，即租金 ×2）。上午雪道人少、压雪平整，最舒服的时段。</p></div></div>
+      <div class="tl-item hi reveal"><div class="tl-time num">09:00<small>晨滑</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>上午滑雪 3 小时</h3><p>状态最好，适合刷道或挑战新线路；记得防晒、补水，11:30 左右收板。</p><span class="mini">雪票仍由住宿套餐包含，放心滑</span></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">12:00<small>午餐</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>午餐 · 休息</h3><p>回酒店或小镇吃顿热的，补充体力。雪票由套餐包含，下午还能继续滑。</p></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">13:15<small>续滑</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>下午再滑 3–4 小时</h3><p>返程晚，下午可以放心再刷几趟道、补拍雪景，把两天滑够本。</p><span class="mini">雪票套餐已含，无需另买</span></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">17:30<small>收工</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>还雪具 · 取行李</h3><p>归还雪具、清点押金凭证，回酒店取行李，留出充裕时间。</p></div></div>
+      <div class="tl-item reveal"><div class="tl-time num">18:20<small>返站</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>接驳返回太子城站</h3><p>乘免费接驳巴士回高铁站，预留安检与候车时间。</p></div></div>
+      <div class="tl-item hi reveal"><div class="tl-time num">19:06<small>返程</small></div><span class="tl-dot"></span>
+        <div class="tl-card"><h3>高铁返程 → 清河站</h3><p>与第一天相同的返程时间：太子城 19:06 → 清河 20:04，高铁二等座 ¥93。两天充实圆满。</p><span class="mini">20:04 抵达清河站 · 车次以 12306 为准</span></div></div>
+    </div>
+
+    <div class="billing-note reveal">
+      <h4>💰 两日费用参考 · 综合约 ¥1000 / 人</h4>
+      <div class="bn-grid">
+        <div class="bn-item"><b>🏨 太舞小镇双人间套餐：</b><b>¥800–1000 / 间 / 晚</b>，含雪票 + 早餐 + 温泉 / 电影票二选一；两人拼房则人均约 ¥400–500。<br><b>🎫 雪票：</b>套餐已含，<b>无需另买（¥0）</b>。</div>
+        <div class="bn-item"><b>🎿 雪具租赁：</b>按天算、半天也算一天，参考价 <b>¥100–150 / 套 / 天</b>，两天 <b>¥200–300 / 人</b>。<br><b>🚄 高铁往返：</b><b>¥186</b>（去程 ¥93 + 回程 ¥93，两天同一返程时间）；<b>餐饮：</b>早餐已含，午晚餐两天约 ¥120。</div>
+      </div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:14px"><b>👉 综合人均约 ¥1000</b>（两人拼房一间，明细区间约 ¥906–1106；若单人住一间，则约 ¥1306–1606）。套餐内容与价格以酒店实际公布为准。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 雪场 -->
+<section id="resort">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Where to Ski</div>
+      <h2>雪场怎么选？</h2>
+      <p>本次主推 <b>云顶</b>（纯练习技术）和 <b>太舞</b>（打卡拍照、娱乐项目多、新手友好），两家离太子城站最近；富龙有夜场/学生优惠，但离太子城较远。距离与时间为多来源参考，以现场为准。</p>
+    </div>
+    <div class="resorts">
+      <div class="resort a reveal">
+        <span class="rtag">🚄 太子城站 → 云顶</span>
+        <div class="en">GENTING SECRET GARDEN</div>
+        <h3>云顶滑雪公园</h3>
+        <div class="rdist">📏 约 5 公里 · 车程约 10 分钟 · ⭐ 纯练习技术首选</div>
+        <p>2022 冬奥会竞赛场地，中级道数量多、雪道宽阔，<b>雪质比较好</b>，是<b>专心练技术</b>的好地方。新雪季夜滑升级，滑行里程延长至 13 公里，想刷高级道也有料。</p>
+        <div class="rtrans">🚌 出站即有<b>雪场免费摆渡车</b>直达云顶大酒店，约每 15 分钟一班，随高铁到站加密；也可乘崇礼 10 路公交或打车（约 10 分钟）。</div>
+        <div class="chips"><span>⭐ 主推</span><span>纯练习技术</span><span>冬奥场地</span><span>中级道丰富</span><span>夜滑升级</span></div>
+      </div>
+      <div class="resort b reveal">
+        <span class="rtag">🚄 太子城站 → 太舞</span>
+        <div class="en">THAIWOO SKI RESORT</div>
+        <h3>太舞滑雪小镇</h3>
+        <div class="rdist">📏 约 1–2.5 公里 · 车程约 5–10 分钟 · ⭐ 拍照娱乐首选</div>
+        <p>欧式风情小镇，<b>打卡拍照出片、娱乐项目多</b>，雪道以初中级为主、<b>新手友好</b>，配套成熟、餐饮丰富。新雪季重启多条冬奥高级道，也有进阶空间。</p>
+        <div class="rdownside">⚠️ <b>缺点：</b>雪场风大，天气不好时容易结冰、雪质变硬，出发前留意天气，做好防风保暖与应对准备。</div>
+        <div class="rtrans">🚌 出站乘<b>免费雪场接驳巴士</b>（崇礼 201 路至太舞青旅，或雪场自营摆渡车）约 5–10 分钟；距离最近，当日往返最省时。</div>
+        <div class="chips"><span>⭐ 主推</span><span>打卡拍照</span><span>娱乐项目多</span><span>新手友好</span><span>欧式小镇</span></div>
+      </div>
+    </div>
+    <div class="resort-note reveal">
+      <h4>ℹ️ 其他雪场备注（不建议本次选）</h4>
+      <div class="rn-row">
+        <span>🔸 <b>万龙滑雪场</b><span class="rn-tag">较贵</span> —— 雪道多、<b>雪质好</b>，适合<b>中高阶选手</b>；但票价偏高，距太子城站约 20 分钟车程。</span>
+        <span>🔸 <b>富龙滑雪场</b><span class="rn-tag">比较乱</span> —— 靠近崇礼城区、进出方便，但人多偏杂；离太子城站较远（约 24 公里）。不过有以下免费福利，符合条件可以考虑 👇</span>
+      </div>
+    </div>
+    <div class="promo-card reveal">
+      <h4>🎁 富龙滑雪场优惠（符合条件可免费滑雪）</h4>
+      <div class="promo-list">
+        <div class="promo-item"><b>👩 每周二夜场 · 女生免费</b>每周二夜场对女生免费开放，适合想体验夜滑的女生，注意欣赏夜景、注意保暖。</div>
+        <div class="promo-item"><b>🎓 全日制大学生 · 23 岁以下免费</b>全日制在校大学生且 23 岁以下可免费滑雪，需携带有效学生证件，具体规则以雪场公布为准。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 接驳 -->
+<section id="shuttle" class="shuttle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Last Mile</div>
+      <h2>接驳与雪具租借</h2>
+      <p>高铁到雪场的「最后一公里」已经打通，接驳巴士对接云顶、太舞、富龙、翠云山、万龙等主要雪场；雪具全员到雪场租借。</p>
+    </div>
+    <div class="sh-grid">
+      <div class="panel reveal">
+        <h3><span class="ic">🚌</span> 出站怎么去雪场</h3>
+        <ul class="sh-list">
+          <li><span class="tick">✓</span><span>太子城站出站口设有醒目的 <b>「雪场接驳巴士」指示牌</b>，出站即可换乘。</span></li>
+          <li><span class="tick">✓</span><span>接驳巴士 <b>免费</b>，人满即走或按固定时间发车，覆盖云顶、太舞、富龙、翠云山、万龙。</span></li>
+          <li><span class="tick">✓</span><span>太子城站 → 云顶 / 太舞约 <b>5–10 分钟</b>车程；到万龙约 20 分钟。</span></li>
+          <li><span class="tick">✓</span><span>客流量大时现场有交通执法人员调度，随时增派车辆，无需担心打不到车。</span></li>
+        </ul>
+        <div class="flow">
+          <span class="node hot">太子城站</span><span class="arrow">→</span>
+          <span class="node">免费接驳巴士</span><span class="arrow">→</span>
+          <span class="node">云顶 / 太舞雪场</span>
+        </div>
+        <div class="note">小提示：富龙、翠云山离崇礼站更近；本次目的地太子城站，主攻云顶与太舞最省时间。</div>
+      </div>
+      <div class="panel reveal">
+        <h3><span class="ic">🎿</span> 雪具：全员现场租借</h3>
+        <ul class="sh-list">
+          <li><span class="tick">✓</span><span>我们都不带雪具，<b>到雪场雪具大厅直接租全套</b>：雪板、雪鞋、雪杖、头盔，省去搬运与高铁预约的麻烦。</span></li>
+          <li><span class="tick">✓</span><span>带好<b>身份证</b>办理租赁，按雪场规则交押金；现场试穿雪鞋、让工作人员调好固定器，不合脚立刻换。</span></li>
+          <li><span class="tick">✓</span><span>参考价约 <b>¥100–150 / 套</b>（雪季浮动），已计入下方预算；手套、雪镜、防水外套建议自备，更卫生也更合身。</span></li>
+          <li><span class="tick" style="color:var(--accent)">!</span><span>归还时清点装备、保留押金凭证；旺季租借排队，建议到雪场后先办租赁再去买雪票。</span></li>
+        </ul>
+        <div class="note">既然不带雪具上高铁，就无需 12306「雪具便利行」（每套 68 元）预约；轻装出行，有更多时间享受雪道。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 费用 -->
+<section id="budget">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Budget</div>
+      <h2>费用预算 · 互动计算器</h2>
+      <p>勾选你需要的条目，右侧合计实时更新。除高铁票价外均为雪季参考价，实际以购买时为准。</p>
+    </div>
+    <div class="budget-grid">
+      <div class="panel reveal" id="costBox">
+        <label class="cost-row"><input type="checkbox" data-cost="186" checked><span><span class="cname">往返高铁 · 二等座</span><span class="cdesc">去程 ¥93 + 回程 ¥93，固定支出</span></span><span class="cprice num">¥186</span></label>
+        <label class="cost-row"><input type="checkbox" data-cost="280" checked><span><span class="cname">雪票 · 按小时计算</span><span class="cdesc">可按小时买；买一日票则从启用起 24 小时内有效</span></span><span class="cprice num">¥280</span></label>
+        <label class="cost-row"><input type="checkbox" data-cost="100" checked><span><span class="cname">雪具租赁 · 按天计算</span><span class="cdesc">雪板 + 雪鞋 + 雪杖 + 头盔；半天算一天，¥100–150/套，此处按下限估算</span></span><span class="cprice num">¥100–150</span></label>
+        <label class="cost-row"><input type="checkbox" data-cost="60" checked><span><span class="cname">餐饮补给</span><span class="cdesc">午餐、热饮与能量补给，参考价</span></span><span class="cprice num">¥60</span></label>
+        <label class="cost-row free"><input type="checkbox" data-cost="0" checked disabled><span><span class="cname">雪场接驳巴士</span><span class="cdesc">高铁站 ⇄ 雪场，免费</span></span><span class="cprice num">¥0</span></label>
+      </div>
+      <div class="summary reveal">
+        <div class="lbl">预计人均花费</div>
+        <div class="total num" id="totalCost">¥626</div>
+        <div class="unit">人民币 / 人 · 综合约 ¥600</div>
+        <div class="included">
+          ✓ 往返高铁二等座已含 ¥186<br>
+          ✓ 雪具现场租借（按 ¥100–150 浮动），无需高铁「雪具便利行」68 元<br>
+          ✓ 雪场接驳巴士免费<br>
+          ✓ 价格随雪场、时段浮动，仅供参考
+        </div>
+      </div>
+    </div>
+    <div class="billing-note reveal">
+      <h4>⏱ 计费规则要注意：雪票按小时，雪具按天</h4>
+      <div class="bn-grid">
+        <div class="bn-item"><span class="bn-ic">🎫</span><b>雪票按小时计算：</b>可以按实际时长购买；如果买「一日票」，从启用那一刻起算，可一直滑到<b>第二天同一时间</b>（例如 12:00 启用可滑到次日 12:00），并非按自然日截止。</div>
+        <div class="bn-item"><span class="bn-ic">🎿</span><b>雪具按天计算：</b>租赁以「天」为单位，<b>半天也算一天</b>。我们这次下午到、傍晚还，虽然只滑几小时，仍按一整天收费（参考价 ¥100–150 / 套）。</div>
+      </div>
+    </div>
+    <p class="disclaimer">※ 数据来源：12306 / 同程 / 去哪儿列车信息，张家口市政府及媒体 2025–2026 雪季公开报道。票价、车次、接驳与雪票政策可能调整，请以官方实时发布为准。</p>
+  </div>
+</section>
+
+<!-- 贴士 -->
+<section id="tips" class="tips">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Good to Know</div>
+      <h2>出行贴士 · 别踩坑</h2>
+      <p>几条来自雪场与铁路部门的实用提醒，外加一份可勾选的装备清单（勾选状态会自动保存在本机）。</p>
+    </div>
+    <div class="tip-grid">
+      <div class="tip reveal"><div class="ic">🚉</div><h3>车站服务找得到人</h3><p>清河站有「亲和怡行」服务组，太子城站有「雪之梦-如意」服务组，服务台配备厚手套、棉帽、暖贴等应急物品，天冷路滑随时求助。</p></div>
+      <div class="tip reveal"><div class="ic">🎫</div><h3>雪票按小时、雪具按天</h3><p>雪票按小时计费，只滑一下午可按需买短时段；买一日票则从启用起 24 小时有效。雪具租赁按天算、半天也算一天，所以下午到场租一套仍是整天价。车票提前订，雪具到雪场租即可。</p></div>
+      <div class="tip warn reveal"><div class="ic">⚠️</div><h3>租雪具先试穿再上道</h3><p>凭身份证办租赁、交押金；雪鞋要合脚、固定器让工作人员调好，不合身立刻换。归还时清点装备、留好押金凭证，别赶在发车前才还。</p></div>
+      <div class="tip reveal"><div class="ic">🧥</div><h3>自备贴身装备更舒服</h3><p>雪板雪鞋雪杖头盔现场租，但手套、雪镜、防水外套、防晒和干爽袜建议自备（更卫生合身）。采用「排汗内层 + 保暖中层 + 防水外层」三层穿法。</p></div>
+    </div>
+
+    <div class="gear reveal">
+      <h3>🎒 出门装备清单</h3>
+      <div class="hrow"><span style="font-size:13px;color:var(--ink3)">点一下即可勾选，状态自动保存</span><span class="progress" id="gearProgress">0 / 4 已准备</span></div>
+      <div class="gear-list" id="gearList">
+        <label><input type="checkbox" checked><span>🪪 身份证 / 购票证件</span></label>
+        <label><input type="checkbox" checked><span>🔋 充电宝</span></label>
+        <label><input type="checkbox" checked><span>🔥 暖贴 / 保暖物品 / 速干服等</span></label>
+        <label><input type="checkbox" checked><span>🍪 零食（能量补给）</span></label>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap frow">
+    <div><b>❄ 雪途 · 崇礼滑雪一日攻略</b><br>北京 → 太子城 · 高铁当日往返</div>
+    <div class="src">信息来源：12306、同程、去哪儿列车时刻与票价；张家口市人民政府、张家口广播电视台、澎湃新闻 2025–2026 雪季公开报道。本页为出行参考，具体车次、票价、接驳班次及雪场政策请以官方实时发布为准。</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // 飘雪
+  var hero=document.getElementById('hero');
+  for(var i=0;i<26;i++){
+    var s=document.createElement('span');
+    s.className='snow';
+    s.style.left=(Math.random()*100)+'%';
+    s.style.width=s.style.height=(2+Math.random()*4)+'px';
+    s.style.setProperty('--dur',(8+Math.random()*12)+'s');
+    s.style.setProperty('--delay',(-Math.random()*20)+'s');
+    s.style.setProperty('--drift',(30+Math.random()*90)+'px');
+    s.style.opacity=(0.35+Math.random()*0.5);
+    hero.appendChild(s);
+  }
+
+  // 费用计算器
+  var box=document.getElementById('costBox');
+  var totalEl=document.getElementById('totalCost');
+  function calc(){
+    var sum=0;
+    box.querySelectorAll('input[data-cost]:checked').forEach(function(i){sum+=Number(i.dataset.cost)});
+    totalEl.textContent='¥'+sum;
+  }
+  box.addEventListener('change',calc);
+  calc();
+
+  // 装备清单 + 本地保存
+  var list=document.getElementById('gearList');
+  var boxes=Array.prototype.slice.call(list.querySelectorAll('input'));
+  var prog=document.getElementById('gearProgress');
+  var KEY='ski-gear-checklist-v2';
+  var saved=[0,1,2,3];
+  try{var raw=localStorage.getItem(KEY);if(raw!==null)saved=JSON.parse(raw)}catch(e){saved=[0,1,2,3]}
+  function refresh(){
+    var n=0;
+    boxes.forEach(function(b,i){
+      b.parentElement.classList.toggle('done',b.checked);
+      if(b.checked)n++;
+    });
+    prog.textContent=n+' / '+boxes.length+' 已准备';
+  }
+  boxes.forEach(function(b,i){
+    b.checked=saved.indexOf(i)>-1;
+    b.addEventListener('change',function(){
+      var state=[];
+      boxes.forEach(function(x,j){if(x.checked)state.push(j)});
+      try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}
+      refresh();
+    });
+  });
+  refresh();
+
+  // 滚动渐入 + 导航高亮
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  var links=Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var secs=Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var io2=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){l.classList.toggle('active',l.dataset.target===e.target.id)});
+      }
+    });
+  },{rootMargin:'-42% 0px -55% 0px'});
+  secs.forEach(function(s){io2.observe(s)});
+})();
+</script>
+</body>
+</html>
