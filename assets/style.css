@@ -1,0 +1,425 @@
+:root{
+    --bg:#eef5fb; --bg2:#f7fbfe; --surface:#ffffff;
+    --ink:#102a43; --ink2:#486581; --ink3:#829ab1;
+    --primary:#1676c9; --primary2:#0d5ba7;
+    --ice:#dceefb; --ice2:#bfe0f6;
+    --accent:#f2662a; --accent-soft:#fff1e9;
+    --line:#e2ecf5; --shadow:0 12px 34px rgba(16,42,67,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg2); color:var(--ink); line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+
+  /* ---------- 顶部导航 ---------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(255,255,255,.86);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;gap:26px;height:64px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:17px;white-space:nowrap}
+  .brand .mark{
+    width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--primary),var(--primary2));color:#fff;font-size:18px;
+    box-shadow:0 6px 14px rgba(22,118,201,.32);
+  }
+  .brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--ink3);font-weight:700;line-height:1}
+  .nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{
+    font-size:13.5px;color:var(--ink2);padding:8px 12px;border-radius:9px;white-space:nowrap;
+    font-weight:600;transition:.2s;
+  }
+  .nav a:hover{background:var(--ice);color:var(--primary2)}
+  .nav a.active{background:var(--primary);color:#fff}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(165deg,#082642 0%,#0e4b7a 46%,#1b79bd 100%);
+    padding:150px 0 108px;min-height:640px;
+  }
+  .hero .wrap{position:relative;z-index:3}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;
+    letter-spacing:1px;padding:7px 14px;border-radius:99px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#7ee0b8;box-shadow:0 0 0 4px rgba(126,224,184,.22)}
+  .hero h1{
+    font-size:clamp(38px,6.4vw,72px);line-height:1.1;font-weight:900;letter-spacing:-1px;
+    margin:22px 0 18px;max-width:760px;
+  }
+  .hero h1 .hl{background:linear-gradient(90deg,#ffd6a5,#ff9a5c);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(15px,2vw,19px);max-width:600px;color:#d8ecfb;line-height:1.8}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .badges span{
+    font-size:13px;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(4px);
+  }
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:12px;
+    font-weight:700;font-size:14.5px;transition:.2s;cursor:pointer;border:0;
+  }
+  .btn-main{background:linear-gradient(135deg,#ff9a5c,#f2662a);color:#fff;box-shadow:0 10px 24px rgba(242,102,42,.35)}
+  .btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(242,102,42,.45)}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+  .btn-ghost:hover{background:rgba(255,255,255,.2)}
+  .btn-two{background:linear-gradient(135deg,#3fd0c9,#17a89e);color:#fff;box-shadow:0 10px 24px rgba(23,168,158,.32)}
+  .btn-two:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(23,168,158,.45)}
+  .snow{position:absolute;top:-12px;border-radius:50%;background:#fff;opacity:.75;pointer-events:none;
+    animation:fall var(--dur) linear var(--delay) infinite}
+  @keyframes fall{from{transform:translate(0,-12px)}to{transform:translate(var(--drift),108vh)}}
+  .mountains{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:300px;z-index:1}
+
+  /* ---------- 板块通用 ---------- */
+  section{padding:76px 0}
+  .sec-head{margin-bottom:30px}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:2.5px;color:var(--primary);text-transform:uppercase}
+  .sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:900;letter-spacing:-.5px;margin:8px 0 6px}
+  .sec-head p{color:var(--ink2);font-size:15px;max-width:640px}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- 概览 ---------- */
+  .overview{background:var(--bg2);padding-top:56px}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .fact{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .fact::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+  .fact:nth-child(3)::before{background:var(--accent)}
+  .fact:nth-child(4)::before{background:#2fae86}
+  .fact .lbl{font-size:12.5px;color:var(--ink3);font-weight:700;letter-spacing:.5px}
+  .fact .val{font-size:25px;font-weight:900;margin-top:6px;letter-spacing:-.5px}
+  .fact .sub{font-size:12.5px;color:var(--ink2);margin-top:2px}
+
+  /* ---------- 交通车票 ---------- */
+  .tickets{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .ticket{
+    position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:26px 26px 22px;overflow:hidden;
+  }
+  .ticket::before,.ticket::after{
+    content:'';position:absolute;width:22px;height:22px;border-radius:50%;background:var(--bg2);
+    border:1px solid var(--line);top:118px;
+  }
+  .ticket::before{left:-12px}.ticket::after{right:-12px}
+  .ticket .thead{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px dashed var(--line)}
+  .tag{font-size:12px;font-weight:800;padding:5px 11px;border-radius:8px}
+  .tag.go{background:#e7f3fd;color:var(--primary2)}
+  .tag.back{background:var(--accent-soft);color:#d9531e}
+  .train-no{font-size:12.5px;color:var(--ink3);font-weight:700}
+  .route{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 0 16px}
+  .station .code{font-size:clamp(27px,3.6vw,38px);font-weight:900;letter-spacing:-1px;line-height:1}
+  .station .name{font-size:14px;color:var(--ink2);margin-top:6px;font-weight:600}
+  .station .name b{color:var(--ink);font-weight:800}
+  .mid{flex:1;text-align:center;color:var(--ink3);font-size:12px;position:relative}
+  .mid .line{height:2px;background:linear-gradient(90deg,var(--ice2),var(--primary),var(--ice2));border-radius:2px;margin:6px 4px;position:relative}
+  .mid .line::after{content:'🚄';position:absolute;right:-4px;top:-13px;font-size:16px}
+  .tfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--line);padding-top:16px;font-size:13px;color:var(--ink2)}
+  .tfoot b{color:var(--ink)}
+  .price{font-size:22px;font-weight:900;color:var(--accent)}
+  .stops{font-size:12px;color:var(--ink3);margin-top:14px;line-height:1.6}
+
+  /* ---------- 时间轴 ---------- */
+  .timeline{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+  .tl{position:relative;max-width:820px;margin:0 auto;padding-left:14px}
+  .tl::before{content:'';position:absolute;left:88px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--primary),var(--ice2),var(--accent))}
+  .tl-item{display:grid;grid-template-columns:74px 1fr;gap:32px;position:relative;padding-bottom:26px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-time{text-align:right;font-size:16px;font-weight:900;color:var(--primary2);padding-top:16px;position:relative}
+  .tl-time small{display:block;font-size:11px;color:var(--ink3);font-weight:600}
+  .tl-dot{position:absolute;left:79px;top:20px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--primary);z-index:2}
+  .tl-item.hi .tl-dot{border-color:var(--accent);box-shadow:0 0 0 5px var(--accent-soft)}
+  .tl-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;box-shadow:0 6px 18px rgba(16,42,67,.05);
+  }
+  .tl-card h3{font-size:16px;font-weight:800;margin-bottom:3px}
+  .tl-card p{font-size:13.5px;color:var(--ink2)}
+  .tl-card .mini{display:inline-block;margin-top:8px;font-size:12px;color:var(--primary2);background:var(--ice);padding:3px 10px;border-radius:7px;font-weight:700}
+
+  /* ---------- 两日规划 ---------- */
+  .twoday{background:var(--bg2)}
+  .day-head{display:flex;align-items:center;gap:12px;margin:34px 0 20px}
+  .day-head .day-badge{font-size:15px;font-weight:900;color:#fff;padding:7px 16px;border-radius:10px;letter-spacing:.5px;white-space:nowrap}
+  .day-head .day-badge.d1{background:linear-gradient(135deg,#1676c9,#0d5ba7)}
+  .day-head .day-badge.d2{background:linear-gradient(135deg,#ff9a5c,#f2662a)}
+  .day-head h3{font-size:19px;font-weight:800}
+  .day-head .day-sub{font-size:13px;color:var(--ink3);margin-left:auto}
+  .day-tips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:8px}
+  .day-tip{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+  .day-tip .ic{font-size:20px}
+  .day-tip b{display:block;font-size:14px;margin:6px 0 3px}
+  .day-tip p{font-size:12.5px;color:var(--ink2);line-height:1.6}
+  /* 两日住宿推荐 */
+  .stay-title{font-size:15px;font-weight:800;margin:22px 0 11px;display:flex;align-items:center;gap:7px}
+  .stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .stay-card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--primary);border-radius:14px;padding:15px 16px;box-shadow:var(--shadow)}
+  .stay-card.t{border-top-color:var(--accent)}
+  .stay-card.f{border-top-color:#7a4fd0}
+  .stay-card h5{font-size:14px;font-weight:900;margin-bottom:7px}
+  .stay-card .stay-tag{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:6px;background:#eaf4fd;color:#1676c9;margin-left:4px;vertical-align:1px}
+  .stay-card.t .stay-tag{background:var(--accent-soft);color:#c94a15}
+  .stay-card.f .stay-tag{background:#f2ecfd;color:#5a35a8}
+  .stay-card .hotel{font-size:12.5px;color:var(--ink2);line-height:1.65}
+  .stay-card .hotel b{color:var(--ink)}
+  .stay-card .pros{font-size:11.5px;color:var(--ink3);line-height:1.6;border-top:1px dashed var(--line);padding-top:8px;margin-top:9px}
+  /* 酒店房态截图对比 */
+  .hotel-shot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);margin-bottom:8px}
+  .hs-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;font-weight:800;margin-bottom:14px}
+  .hs-tip{font-size:11px;font-weight:600;color:var(--ink3)}
+  .hs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .hs-item{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:12px}
+  .hs-item h6{font-size:13px;font-weight:800;margin-bottom:10px;padding-left:8px;border-left:3px solid var(--accent)}
+  .hs-item.ns h6{border-left-color:var(--primary)}
+  .hs-item.ab h6{border-left-color:#2f8f6c}
+  .hs-img{display:block;width:100%;border:1px solid var(--line);border-radius:8px;cursor:zoom-in}
+  .hs-img.zoom{position:fixed;inset:0;z-index:99;width:100vw;max-width:none;height:auto;border-radius:0;cursor:zoom-out;object-fit:contain;background:var(--surface)}
+  .hs-note{font-size:11.5px;color:var(--ink2);line-height:1.7;margin-top:11px}
+  .hs-note b{color:var(--ink)}
+  .stay-card .stay-shot{margin-top:11px;border-top:1px dashed var(--line);padding-top:10px}
+  .stay-card .stay-shot img{display:block;width:100%;border:1px solid var(--line);border-radius:8px;cursor:zoom-in}
+  .stay-card .stay-shot img.zoom{position:fixed;inset:0;z-index:99;width:100vw;max-width:none;height:auto;border-radius:0;cursor:zoom-out;object-fit:contain;background:var(--surface)}
+  .stay-card .stay-shot .ss-note{font-size:11px;color:var(--ink3);line-height:1.65;margin-top:8px}
+  .stay-card .stay-shot .ss-note b{color:var(--ink2)}
+  .twoday .tl::before{left:88px}
+
+  /* ---------- 按雪场快速查看 ---------- */
+  .ski-tabs{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:22px}
+  .ski-tabs-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .ski-tabs-head h3{font-size:16px;font-weight:900;display:flex;align-items:center;gap:8px}
+  .ski-tabs-head .hint{font-size:12px;color:var(--ink3)}
+  .ski-tabbar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+  .ski-tab{border:1.5px solid var(--line);background:var(--bg2);border-radius:12px;padding:12px 10px;cursor:pointer;text-align:center;font-weight:800;font-size:14px;color:var(--ink2);transition:.2s;user-select:none}
+  .ski-tab small{display:block;font-size:11px;font-weight:600;color:var(--ink3);margin-top:3px}
+  .ski-tab:hover{border-color:var(--ice2);transform:translateY(-1px)}
+  .ski-tab[data-s="t"].on{background:linear-gradient(100deg,#f2662a,#d9531e);color:#fff;border-color:transparent}
+  .ski-tab[data-s="g"].on{background:linear-gradient(100deg,#1676c9,#0d5ba7);color:#fff;border-color:transparent}
+  .ski-tab[data-s="f"].on{background:linear-gradient(100deg,#7a4fd0,#5a35a8);color:#fff;border-color:transparent}
+  .ski-tab.on small{color:rgba(255,255,255,.85)}
+  .ski-panel{display:none;animation:skiFade .3s ease}
+  .ski-panel.on{display:block}
+  @keyframes skiFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .ski-pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .ski-blk{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .ski-blk h5{font-size:12.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;color:var(--primary)}
+  .ski-panel[data-s="t"] .ski-blk h5{color:var(--accent)}
+  .ski-panel[data-s="f"] .ski-blk h5{color:#7a4fd0}
+  .ski-blk p{font-size:12px;color:var(--ink2);line-height:1.7}
+  .ski-blk .price{font-size:19px;font-weight:900;color:var(--ink);line-height:1.5}
+  .ski-blk .price small{font-size:11px;color:var(--ink3);font-weight:600}
+  .ski-blk ul{list-style:none;padding:0;margin:0}
+  .ski-blk li{font-size:12px;color:var(--ink2);line-height:1.75;padding-left:13px;position:relative}
+  .ski-blk li::before{content:"·";position:absolute;left:3px;font-weight:900;color:var(--primary)}
+  .ski-blk li b{color:var(--ink)}
+  .ski-full{grid-column:1/-1}
+  .ski-jump{display:flex;flex-wrap:wrap;gap:8px}
+  .ski-jump a{font-size:11.5px;font-weight:700;color:var(--primary);background:var(--ice);padding:6px 12px;border-radius:8px;text-decoration:none}
+  .ski-jump a:hover{background:var(--ice2)}
+
+  /* ---------- 雪场 ---------- */
+  .resorts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .resort{
+    position:relative;border-radius:var(--radius);overflow:hidden;color:#fff;min-height:290px;
+    padding:28px;display:flex;flex-direction:column;justify-content:flex-end;
+    box-shadow:var(--shadow);isolation:isolate;
+  }
+  .resort::before{content:'';position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center}
+  .resort::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,26,45,.05) 0%,rgba(4,26,45,.5) 55%,rgba(4,26,45,.9) 100%)}
+  .resort.a::before{background-image:linear-gradient(140deg,#2e6fa8,#6cb6e0)}
+  .resort.b::before{background-image:linear-gradient(140deg,#355f7e,#8fc4c9)}
+  .resort .rtag{position:absolute;top:22px;left:26px;font-size:12px;font-weight:800;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);padding:5px 11px;border-radius:8px;backdrop-filter:blur(4px)}
+  .resort h3{font-size:27px;font-weight:900;letter-spacing:-.5px}
+  .resort .en{font-size:11px;letter-spacing:2px;opacity:.8;font-weight:700;margin-top:30px}
+  .resort p{font-size:13.5px;color:#e8f3fb;margin-top:9px;max-width:440px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .chips span{font-size:11.5px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);padding:4px 10px;border-radius:99px}
+  .rtrans{display:flex;align-items:center;gap:8px;margin-top:14px;padding:10px 13px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);border-radius:10px;font-size:12.5px;font-weight:600;line-height:1.5}
+  .rtrans b{color:#ffd9ad;font-weight:800}
+  .rdist{font-size:12px;color:#ffd9ad;font-weight:700;margin-top:7px}
+  .resort-note{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow)}
+  .resort-note h4{font-size:14px;font-weight:800;margin-bottom:8px}
+  .resort-note .rn-row{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:13px;color:var(--ink2)}
+  .resort-note .rn-row b{color:var(--ink)}
+  .resort-note .rn-tag{display:inline-block;background:var(--accent-soft);color:#d9531e;font-size:11px;font-weight:800;padding:1px 8px;border-radius:6px;margin-left:4px}
+  .promo-card{margin-top:14px;background:linear-gradient(135deg,#fff6ec,#ffe9d6);border:1px solid #ffd6b0;border-left:4px solid var(--accent);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow)}
+  .promo-card h4{font-size:14px;font-weight:800;color:#c94a15;margin-bottom:10px}
+  .promo-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .promo-item{font-size:13px;color:var(--ink2);line-height:1.6;background:rgba(255,255,255,.6);border-radius:10px;padding:11px 14px}
+  .promo-item b{display:block;color:#c94a15;font-size:14px;margin-bottom:2px}
+
+  /* ---------- 官方雪票价格表 ---------- */
+  .ticket-sec{margin-top:22px}
+  .ticket-note{font-size:12.5px;color:var(--ink2);background:var(--ice);border-left:4px solid var(--primary);border-radius:10px;padding:11px 16px;margin-bottom:14px;line-height:1.7}
+  .ticket-note b{color:var(--primary2)}
+  .ticket-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ticket-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .ticket-card .th{padding:12px 16px;color:#fff;font-size:14px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .ticket-card.g .th{background:linear-gradient(100deg,#1676c9,#0d5ba7)}
+  .ticket-card.t .th{background:linear-gradient(100deg,#f2662a,#d9531e)}
+  .ticket-card.f{grid-column:1 / -1}
+  .ticket-card.f .th{background:linear-gradient(100deg,#7a4fd0,#5a35a8)}
+  .ticket-card.f table td:last-child{color:var(--ink2);font-size:11.5px}
+  .tp-rules{margin-top:12px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+  .tp-rules b{font-size:12.5px;color:var(--ink);display:block;margin-bottom:6px}
+  .tp-rules ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 22px}
+  .tp-rules li{font-size:11.5px;color:var(--ink2);line-height:1.6;padding-left:15px;position:relative}
+  .tp-rules li:before{content:"•";position:absolute;left:2px;color:var(--primary);font-weight:900}
+  .ticket-card .th small{font-size:11px;font-weight:600;opacity:.85;white-space:nowrap}
+  .ticket-card table{width:100%;border-collapse:collapse;font-size:12.5px}
+  .ticket-card th,.ticket-card td{padding:7px 11px;text-align:left;border-bottom:1px solid var(--line)}
+  .ticket-card thead th{background:var(--bg2);color:var(--ink3);font-size:11px;font-weight:700;white-space:nowrap}
+  .ticket-card tbody tr:last-child td{border-bottom:0}
+  .ticket-card td:first-child{font-weight:700;color:var(--ink)}
+  .ticket-card .pr{font-weight:900;color:#d9531e;white-space:nowrap}
+  .ticket-card .pr .old{display:block;font-weight:600;color:var(--ink3);text-decoration:line-through;font-size:11px;line-height:1.2;margin-bottom:1px}
+  .ticket-card .pr .wk{display:block;font-size:10.5px;color:#c94a15;font-weight:700;margin-top:2px;line-height:1.2}
+  .ticket-card .pr .dash{color:var(--ink3)}
+  .ticket-card .tf{padding:9px 14px;background:var(--bg2);font-size:11px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--line)}
+
+  /* ---------- 雪场开放时间 ---------- */
+  .hour-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+  .hour-card h5{font-size:14px;font-weight:800;margin-bottom:9px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .hour-card .hr{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--ink2);padding:3px 0}
+  .hour-card .hr b{color:var(--ink);font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .hour-card .hr .night{color:#d9531e}
+  /* 开放时间内嵌到各票价卡内，沿用各自主题色 */
+  .ticket-card .hour-card{border:0;border-top:1px dashed var(--line);border-radius:0;box-shadow:none;padding:11px 16px 13px;background:rgba(22,118,201,.035)}
+  .ticket-card .hour-card h5{font-size:12.5px;border:0;padding:0;margin-bottom:7px;color:var(--primary)}
+  .ticket-card.t .hour-card{background:rgba(242,102,42,.045)}
+  .ticket-card.t .hour-card h5{color:#d9531e}
+  .ticket-card.f .hour-card{background:rgba(122,79,208,.05)}
+  .ticket-card.f .hour-card h5{color:#5a35a8}
+  .rdownside{margin-top:10px;background:rgba(242,102,42,.16);border:1px solid rgba(255,190,150,.35);border-radius:9px;padding:9px 12px;font-size:12.5px;color:#ffe0cc;line-height:1.55}
+  .rdownside b{color:#ffc39c}
+
+  /* ---------- 接驳 ---------- */
+  .shuttle{background:var(--bg)}
+  .sh-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .panel h3{font-size:18px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+  .panel h3 .ic{width:30px;height:30px;border-radius:9px;background:var(--ice);display:grid;place-items:center;font-size:15px}
+  .sh-list{list-style:none;display:grid;gap:12px}
+  .sh-list li{display:flex;gap:12px;font-size:14px;color:var(--ink2);align-items:flex-start}
+  .sh-list li b{color:var(--ink);font-weight:800}
+  .sh-list .tick{color:#2fae86;font-weight:900;flex:none}
+  .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .flow .node{background:var(--ice);color:var(--primary2);font-weight:800;font-size:13px;padding:10px 14px;border-radius:10px}
+  .flow .node.hot{background:var(--accent);color:#fff}
+  .flow .arrow{color:var(--ink3);font-size:18px}
+  .note{margin-top:16px;font-size:12.5px;color:var(--ink3);background:var(--bg2);border-radius:10px;padding:12px 14px;border-left:3px solid var(--primary)}
+
+  /* ---------- 费用 ---------- */
+  .budget-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:start}
+  .cost-row{
+    display:flex;align-items:center;gap:13px;padding:13px 4px;border-bottom:1px solid var(--line);cursor:pointer;
+  }
+  .cost-row:last-child{border-bottom:0}
+  .cost-row input{width:19px;height:19px;accent-color:var(--primary);cursor:pointer;flex:none}
+  .cost-row .cname{font-size:14.5px;font-weight:700}
+  .cost-row .cdesc{font-size:12px;color:var(--ink3);margin-top:1px}
+  .cost-row .cprice{margin-left:auto;font-weight:900;font-size:16px;white-space:nowrap}
+  .cost-row.free .cprice{color:#2fae86}
+  .summary{
+    position:sticky;top:88px;background:linear-gradient(160deg,#0e4b7a,#1676c9);color:#fff;
+    border-radius:var(--radius);padding:28px;box-shadow:0 16px 36px rgba(14,75,122,.28);
+  }
+  .summary .lbl{font-size:13px;opacity:.85;letter-spacing:1px}
+  .summary .total{font-size:clamp(40px,5vw,58px);font-weight:900;letter-spacing:-2px;line-height:1.15;margin:6px 0}
+  .summary .unit{font-size:14px;opacity:.85}
+  .summary .included{margin-top:18px;border-top:1px solid rgba(255,255,255,.25);padding-top:16px;font-size:12.5px;opacity:.9;line-height:1.9}
+  .disclaimer{font-size:12px;color:var(--ink3);margin-top:16px}
+  .billing-note{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow)}
+  .billing-note h4{font-size:14px;font-weight:800;margin-bottom:10px}
+  .billing-note .bn-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .billing-note .bn-item{font-size:13px;color:var(--ink2);line-height:1.75}
+  .billing-note .bn-item b{color:var(--ink)}
+  .billing-note .bn-item .bn-ic{font-size:17px;margin-right:4px}
+  /* 综合花费速览 */
+  .cost-compare{margin-top:24px}
+  .cc-head h3{font-size:19px;font-weight:900}
+  .cc-head p{font-size:13px;color:var(--ink3);margin-top:4px}
+  .cc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  .cc-card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--primary);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+  .cc-card.two{border-top-color:var(--accent)}
+  .cc-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .cc-tag{font-size:12.5px;font-weight:800;color:var(--primary2);background:var(--ice);padding:5px 11px;border-radius:99px}
+  .cc-card.two .cc-tag{color:#c94a15;background:var(--accent-soft)}
+  .cc-total{font-size:34px;font-weight:900;letter-spacing:-1px}
+  .cc-total small{font-size:13px;font-weight:700;letter-spacing:0;color:var(--ink3);margin-left:3px}
+  .cc-list{list-style:none;display:grid;gap:9px;margin:0;padding:0}
+  .cc-list li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13.5px;color:var(--ink2);padding-bottom:9px;border-bottom:1px dashed var(--line)}
+  .cc-list li:last-child{border-bottom:0;padding-bottom:0}
+  .cc-list li b{font-size:15px;color:var(--ink);white-space:nowrap}
+  .cc-foot{margin-top:13px;background:var(--bg2);border-radius:10px;padding:10px 12px;font-size:12.5px;color:var(--ink3);line-height:1.65}
+  .cc-foot b{color:var(--accent)}
+
+  /* ---------- 贴士 ---------- */
+  .tips{background:var(--bg)}
+  .tip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .tip{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .tip .ic{font-size:22px}
+  .tip h3{font-size:16px;font-weight:800;margin:8px 0 6px}
+  .tip p{font-size:13.5px;color:var(--ink2)}
+  .tip.warn{border-left:4px solid var(--accent)}
+  .gear{margin-top:22px}
+  .gear h3{font-size:18px;font-weight:800;margin-bottom:4px}
+  .gear .hrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .gear .progress{font-size:12.5px;color:var(--primary2);font-weight:800;background:var(--ice);padding:4px 12px;border-radius:99px}
+  .gear-list{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .gear-list label{
+    display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);
+    border-radius:11px;padding:12px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.2s;
+  }
+  .gear-list label:hover{border-color:var(--primary)}
+  .gear-list input{width:17px;height:17px;accent-color:var(--primary);cursor:pointer;flex:none}
+  .gear-list label.done{background:#f0faf5;border-color:#bfe6d3;color:#2f8f6c;text-decoration:line-through}
+  .gear-list label.must{border-color:#ffd6b0;background:#fffaf5}
+  .gear-list label.must span em{font-style:normal;font-size:10px;color:#d9531e;background:var(--accent-soft);padding:1px 6px;border-radius:5px;margin-left:5px;font-weight:800;white-space:nowrap}
+
+  /* ---------- 页脚 ---------- */
+  footer{background:#0a2138;color:#a9c3da;padding:38px 0;font-size:12.5px}
+  footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  footer b{color:#fff;font-size:15px}
+  footer .src{max-width:720px;line-height:1.9}
+
+  @media(max-width:900px){
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .tickets,.resorts,.sh-grid,.budget-grid,.tip-grid{grid-template-columns:1fr}
+    .summary{position:static}
+    .billing-note .bn-grid{grid-template-columns:1fr}
+    .cc-grid{grid-template-columns:1fr}
+    .day-tips,.promo-list,.ticket-grid,.tp-rules ul,.stay-grid,.hs-grid,.ski-tabbar,.ski-pgrid{grid-template-columns:1fr}
+    .day-head .day-sub{display:none}
+    .gear-list{grid-template-columns:repeat(2,1fr)}
+    .tl::before{left:66px}.tl-dot{left:57px}.tl-item{grid-template-columns:56px 1fr;gap:24px}
+  }
+  @media(max-width:560px){
+    section{padding:56px 0}
+    .hero{padding:124px 0 84px;min-height:560px}
+    .facts{grid-template-columns:1fr 1fr;gap:10px}
+    .fact{padding:16px}.fact .val{font-size:20px}
+    .ticket::before,.ticket::after{display:none}
+    .station .code{font-size:26px}
+    .gear-list{grid-template-columns:1fr}
+    .nav{display:none}
+  }
+  @media print{
+    .topbar,.cta,.snow{display:none!important}
+    section{padding:26px 0;break-inside:avoid}
+    .reveal{opacity:1;transform:none}
+    body{background:#fff}
+  }
