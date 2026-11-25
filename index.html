@@ -231,6 +231,7 @@
   .ticket-card td:first-child{font-weight:700;color:var(--ink)}
   .ticket-card .pr{font-weight:900;color:#d9531e;white-space:nowrap}
   .ticket-card .pr .old{display:block;font-weight:600;color:var(--ink3);text-decoration:line-through;font-size:11px;line-height:1.2;margin-bottom:1px}
+  .ticket-card .pr .wk{display:block;font-size:10.5px;color:#c94a15;font-weight:700;margin-top:2px;line-height:1.2}
   .ticket-card .pr .dash{color:var(--ink3)}
   .ticket-card .tf{padding:9px 14px;background:var(--bg2);font-size:11px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--line)}
   .rdownside{margin-top:10px;background:rgba(242,102,42,.16);border:1px solid rgba(255,190,150,.35);border-radius:9px;padding:9px 12px;font-size:12.5px;color:#ffe0cc;line-height:1.55}
@@ -614,7 +615,7 @@
           <table>
             <thead><tr><th>票种</th><th>不含雪具</th><th>含雪具</th></tr></thead>
             <tbody>
-              <tr><td>4 小时滑雪票</td><td class="pr">¥208 起</td><td class="pr">¥328 起</td></tr>
+              <tr><td>4 小时滑雪票</td><td class="pr">¥208 起<span class="wk">周末 ¥278</span></td><td class="pr">¥328 起</td></tr>
               <tr><td>1 日滑雪票</td><td class="pr">¥288 起</td><td class="pr">¥418 起</td></tr>
               <tr><td>1.5 天滑雪票</td><td class="pr">¥398 起</td><td class="pr">¥578 起</td></tr>
               <tr><td>2 日滑雪票</td><td class="pr">¥428 起</td><td class="pr">¥648 起</td></tr>
@@ -624,7 +625,7 @@
               <tr><td>雪具寄存服务（整季）</td><td class="pr">¥480 起</td><td class="pr dash">—</td></tr>
             </tbody>
           </table>
-          <div class="tf">* 4 小时票需连续使用、不可跨夜场及次日；1 日票当天日场有效；1.5/2/3 日票限日场缆车运营使用、夜场不可用、不可跨天。下午场 13:00 入场至 16:30，夜场 18:30–21:30，须同一天使用、不可拆分。云龙通需在云顶核销。雪具寄存为 26–27 雪季整季寄存一套（雪板/雪鞋/雪杖）。</div>
+          <div class="tf">* 周末实际下单页显示：4 小时单雪票 <b>¥278</b>（周六 / 周日使用，不含雪具、雪鞋及头盔小件），比票务页「¥208 起」更贴近周末真实花费。4 小时票需连续使用、不可跨夜场及次日；1 日票当天日场有效；1.5/2/3 日票限日场缆车运营使用、夜场不可用、不可跨天。下午场 13:00 入场至 16:30，夜场 18:30–21:30，须同一天使用、不可拆分。云龙通需在云顶核销。雪具寄存为 26–27 雪季整季寄存一套（雪板/雪鞋/雪杖）。</div>
         </div>
         <div class="ticket-card t">
           <div class="th">太舞滑雪小镇 <small>THAIWOO · 周末价</small></div>
@@ -660,7 +661,7 @@
           <div class="tf">* 截图日期为 2026/12/12（周六）旺季周末档，¥215 / ¥264 为起售价（平日或淡季日期），实际价格随所选日期浮动；押金可退，规则以官方购票页为准。</div>
         </div>
       </div>
-      <div class="ticket-note" style="border-left-color:var(--accent);background:var(--accent-soft);margin-top:14px;margin-bottom:0">💡 <b>结合我们的行程怎么选：</b>一日游 13:45 开滑、17:00 收工，约 3–4 小时，买单日票不划算——云顶买 <b>4 小时票 ¥208（不含雪具）</b>或太舞周末 4 小时票 ¥268 最合适；富龙 4 小时套票 ¥486（含雪具）价格偏高、且离太子城较远，不作首选。两日游住太舞套餐已含雪票，不用再单买（想自行买票的话，云顶 2 日 ¥428 / 太舞周末 2 天 ¥578 可作参考）。</div>
+      <div class="ticket-note" style="border-left-color:var(--accent);background:var(--accent-soft);margin-top:14px;margin-bottom:0">💡 <b>结合我们的行程怎么选：</b>一日游 13:45 开滑、17:00 收工，约 3–4 小时，买单日票不划算——云顶买 <b>4 小时票 ¥278（周末实价，不含雪具）</b>或太舞周末 4 小时票 ¥268 最合适；富龙 4 小时套票 ¥486（含雪具）价格偏高、且离太子城较远，不作首选。两日游住太舞套餐已含雪票，不用再单买（想自行买票的话，云顶 2 日 ¥428 / 太舞周末 2 天 ¥578 可作参考）。</div>
     </div>
   </div>
 </section>
@@ -714,18 +715,18 @@
     <div class="budget-grid">
       <div class="panel reveal" id="costBox">
         <label class="cost-row"><input type="checkbox" data-cost="186" checked><span><span class="cname">往返高铁 · 二等座</span><span class="cdesc">去程 ¥93 + 回程 ¥93，固定支出</span></span><span class="cprice num">¥186</span></label>
-        <label class="cost-row"><input type="checkbox" data-cost="208" checked><span><span class="cname">雪票 · 4 小时票（官方价）</span><span class="cdesc">云顶 4 小时票 ¥208 起，不含雪具；官方规则不可跨夜场及次日</span></span><span class="cprice num">¥208</span></label>
+        <label class="cost-row"><input type="checkbox" data-cost="278" checked><span><span class="cname">雪票 · 4 小时票（周末实价）</span><span class="cdesc">云顶 4 小时单雪票周末 ¥278，不含雪具；官方规则不可跨夜场及次日</span></span><span class="cprice num">¥278</span></label>
         <label class="cost-row"><input type="checkbox" data-cost="100" checked><span><span class="cname">雪具租赁 · 按天计算</span><span class="cdesc">雪板 + 雪鞋 + 雪杖 + 头盔；半天算一天，¥100–150/套，此处按下限估算</span></span><span class="cprice num">¥100–150</span></label>
         <label class="cost-row"><input type="checkbox" data-cost="60" checked><span><span class="cname">餐饮补给</span><span class="cdesc">午餐、热饮与能量补给，参考价</span></span><span class="cprice num">¥60</span></label>
         <label class="cost-row free"><input type="checkbox" data-cost="0" checked disabled><span><span class="cname">雪场接驳巴士</span><span class="cdesc">高铁站 ⇄ 雪场，免费</span></span><span class="cprice num">¥0</span></label>
       </div>
       <div class="summary reveal">
         <div class="lbl">预计人均花费</div>
-        <div class="total num" id="totalCost">¥554</div>
-        <div class="unit">人民币 / 人 · 综合约 ¥550–600</div>
+        <div class="total num" id="totalCost">¥624</div>
+        <div class="unit">人民币 / 人 · 综合约 ¥600</div>
         <div class="included">
           ✓ 往返高铁二等座已含 ¥186<br>
-          ✓ 雪票按云顶官方 4 小时票 ¥208 计（不含雪具）<br>
+          ✓ 雪票按云顶 4 小时单雪票周末实价 ¥278 计（不含雪具）<br>
           ✓ 雪具现场租借（按 ¥100–150 浮动），无需高铁「雪具便利行」68 元<br>
           ✓ 雪场接驳巴士免费<br>
           ✓ 价格随雪场、时段浮动，仅供参考
@@ -735,7 +736,7 @@
     <div class="billing-note reveal">
       <h4>⏱ 计费规则要注意：雪票按时段，雪具按天</h4>
       <div class="bn-grid">
-        <div class="bn-item"><span class="bn-ic">🎫</span><b>雪票按时段购买（以官方规则为准）：</b>云顶有 4 小时 / 1 日 / 多日票等，<b>4 小时票须连续使用、1 日票限当天日场，均不可跨夜场及次日</b>。我们只滑一下午，买 4 小时票最划算；太舞周末 4 小时票 ¥268、1 天票 ¥388（原价 ¥590）。</div>
+        <div class="bn-item"><span class="bn-ic">🎫</span><b>雪票按时段购买（以官方规则为准）：</b>云顶有 4 小时 / 1 日 / 多日票等，<b>4 小时票须连续使用、1 日票限当天日场，均不可跨夜场及次日</b>。我们只滑一下午，买 4 小时票最划算：云顶周末实价 ¥278、太舞周末 ¥268；太舞 1 天票 ¥388（原价 ¥590）。</div>
         <div class="bn-item"><span class="bn-ic">🎿</span><b>雪具按天计算：</b>租赁以「天」为单位，<b>半天也算一天</b>。我们这次下午到、傍晚还，虽然只滑几小时，仍按一整天收费（参考价 ¥100–150 / 套）。注意雪票「含雪具」款通常比单买贵，我们都租雪具，买「不含雪具」票更省。</div>
       </div>
     </div>
